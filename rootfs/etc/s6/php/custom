@@ -37,8 +37,8 @@ declare -x MYWEBSQL_SERVER_LIST
 [[ -z "${MYWEBSQL_ALLOW_CUSTOM_SERVER_TYPES}" ]] && MYWEBSQL_ALLOW_CUSTOM_SERVER_TYPES="mysql,pgsql"
 [[ -z "${MYWEBSQL_SERVER_LIST}" ]] && MYWEBSQL_SERVER_LIST="mysqli:localhost"
 
-/usr/bin/templater -d -p mywebsql \
-  -o /srv/www/config/auth.php \
+/usr/bin/templater --prefix mywebsql \
+  --output /srv/www/config/auth.php \
   /etc/templates/auth.php.tmpl
 
 if [[ $? -ne 0 ]]
@@ -46,8 +46,8 @@ then
   /bin/s6-svscanctl -t /etc/s6
 fi
 
-/usr/bin/templater -d -p mywebsql \
-  -o /srv/www/config/backups.php \
+/usr/bin/templater --prefix mywebsql \
+  --output /srv/www/config/backups.php \
   /etc/templates/backups.php.tmpl
 
 if [[ $? -ne 0 ]]
@@ -55,8 +55,8 @@ then
   /bin/s6-svscanctl -t /etc/s6
 fi
 
-/usr/bin/templater -d -p mywebsql \
-  -o /srv/www/config/config.php \
+/usr/bin/templater --prefix mywebsql \
+  --output /srv/www/config/config.php \
   /etc/templates/config.php.tmpl
 
 if [[ $? -ne 0 ]]
@@ -64,8 +64,8 @@ then
   /bin/s6-svscanctl -t /etc/s6
 fi
 
-/usr/bin/templater -d -p mywebsql \
-  -o /srv/www/config/database.php \
+/usr/bin/templater --prefix mywebsql \
+  --output /srv/www/config/database.php \
   /etc/templates/database.php.tmpl
 
 if [[ $? -ne 0 ]]
@@ -73,11 +73,12 @@ then
   /bin/s6-svscanctl -t /etc/s6
 fi
 
-/usr/bin/templater -d -p mywebsql \
-  -o /srv/www/config/servers.php \
+/usr/bin/templater --prefix mywebsql \
+  --output /srv/www/config/servers.php \
   /etc/templates/servers.php.tmpl
 
 if [[ $? -ne 0 ]]
 then
   /bin/s6-svscanctl -t /etc/s6
 fi
+
