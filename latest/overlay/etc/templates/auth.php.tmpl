@@ -1,0 +1,7 @@
+<?php
+
+define("AUTH_TYPE", "{{ getenv "MYWEBSQL_AUTH_TYPE" }}");
+define("SECURE_LOGIN", (extension_loaded("openssl") && extension_loaded("gmp")) || extension_loaded("bcmath"));
+define("AUTH_SERVER", "{{ getenv "MYWEBSQL_AUTH_SERVER" }}");
+define("AUTH_LOGIN", "{{ getenv "MYWEBSQL_AUTH_LOGIN" }}");
+define("AUTH_PASSWORD", "{{ getenv "MYWEBSQL_AUTH_PASSWORD" }}");

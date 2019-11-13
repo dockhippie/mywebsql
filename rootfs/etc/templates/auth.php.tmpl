@@ -1,7 +1,0 @@
-<?php
-
-define("AUTH_TYPE", "{{ envString "AUTH_TYPE" }}");
-define("SECURE_LOGIN", (extension_loaded("openssl") && extension_loaded("gmp")) || extension_loaded("bcmath"));
-define("AUTH_SERVER", "{{ envString "AUTH_SERVER" }}");
-define("AUTH_LOGIN", "{{ envString "AUTH_LOGIN" }}");
-define("AUTH_PASSWORD", "{{ envString "AUTH_PASSWORD" }}");
