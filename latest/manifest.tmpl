@@ -1,0 +1,19 @@
+image: webhippie/mywebsql:latest
+manifests:
+  -
+    image: webhippie/mywebsql:latest-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: webhippie/mywebsql:latest-arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
+  -
+    image: webhippie/mywebsql:latest-arm32v6
+    platform:
+      architecture: arm
+      os: linux
+      variant: v6
