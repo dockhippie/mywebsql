@@ -3,5 +3,47 @@
     "extends": [
         "github>dockhippie/.github//renovate/preset"
     ],
-    "packageRules": []
+    "packageRules": [
+        {
+            "description": "Update golang docker images",
+            "datasources": [
+                "docker"
+            ],
+            "updateTypes": [
+                "major",
+                "minor"
+            ],
+            "enabled": true,
+            "automerge": true
+        },
+        {
+            "description": "Update tags without merge",
+            "datasources": [
+                "github-releases"
+            ],
+            "updateTypes": [
+                "major",
+                "minor"
+            ],
+            "enabled": false,
+            "automerge": false,
+            "matchPackageNames": [
+                "Samnan/MyWebSQL"
+            ]
+        },
+        {
+            "description": "Update tags without merge",
+            "datasources": [
+                "github-releases"
+            ],
+            "updateTypes": [
+                "patch"
+            ],
+            "enabled": true,
+            "automerge": true,
+            "matchPackageNames": [
+                "Samnan/MyWebSQL"
+            ]
+        }
+    ]
 }

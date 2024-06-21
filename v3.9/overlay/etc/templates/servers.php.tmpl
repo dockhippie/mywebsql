@@ -1,0 +1,13 @@
+<?php
+
+$ALLOW_CUSTOM_SERVERS = {{ getenv "MYWEBSQL_ALLOW_CUSTOM_SERVERS" }};
+$ALLOW_CUSTOM_SERVER_TYPES = "{{ getenv "MYWEBSQL_ALLOW_CUSTOM_SERVER_TYPES" }}";
+
+$SERVER_LIST = array(
+{{ range $index, $server := (split (getenv "MYWEBSQL_SERVER_LIST") ",") }}{{ $values := (split $server ":") }}
+	"{{ index $values 1 }}" => array(
+		"host" => "{{ index $values 1 }}",
+		"driver" => "{{ index $values 0 }}"
+	),
+{{ end }}
+);
