@@ -40,6 +40,16 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
+echo "> writing modules config"
+gomplate -V \
+    -o /srv/www/config/modules.php \
+    -f /etc/templates/modules.php.tmpl
+
+if [[ $? -ne 0 ]]; then
+    echo "> writing config failed!"
+    exit 1
+fi
+
 echo "> writing servers config"
 gomplate -V \
     -o /srv/www/config/servers.php \

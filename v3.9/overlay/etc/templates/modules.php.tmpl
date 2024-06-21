@@ -1,0 +1,15 @@
+<?php
+
+define("MODULE_ACCESS_MODE", "{{ getenv "MYWEBSQL_MODULE_ACCESS_MODE "}}");
+
+$ALLOW_MODULES = array(
+{{ range (split (getenv "MYWEBSQL_ALLOW_MODULES") ",") }}
+	"{{ . }}",
+{{ end }}
+);
+
+$DENY_MODULES = array(
+{{ range (split (getenv "MYWEBSQL_DENY_MODULES") ",") }}
+	"{{ . }}",
+{{ end }}
+);
