@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/php-apache:8.4-amd64@sha256:222d863295075a57d8299bf011880a5e5659ce4edfae107d8dd198a778c991bb
+FROM ghcr.io/dockhippie/php-apache:8.4-amd64@sha256:453d29fccd89894901455d299260f1246d986ef01e4885c8eb2543c984d095b7
 
 VOLUME ["/var/lib/mywebsql"]
 EXPOSE 8080
