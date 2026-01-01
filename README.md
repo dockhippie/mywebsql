@@ -48,6 +48,8 @@ MYWEBSQL_TRACE_FILEPATH =
 MYWEBSQL_TRACE_MESSAGES = false
 ```
 
+Extracted by the command: `grep -hE ': "\$\{(.*)\}"' latest/overlay/etc/entrypoint.d/*.sh | sed 's/: "\${//' | sed 's/:="/ = /' | sed 's/"}"$//' | sort | uniq`
+
 ## Inherited environment variables
 
 *  [webhippie/php-apache](https://github.com/dockhippie/php-apache#available-environment-variables)

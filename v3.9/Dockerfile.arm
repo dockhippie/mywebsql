@@ -26,3 +26,6 @@ RUN curl -sSLo /tmp/mywebsql.zip https://github.com/Samnan/MyWebSQL/releases/dow
   chown -R apache:apache /srv/www
 
 COPY ./overlay /
+
+RUN find /etc/container.d /etc/entrypoint.d -type f -name \*.sh -exec sed -i 's/\r$//' {} +; \
+  chmod +x /etc/container.d/*.sh /etc/entrypoint.d/*.sh
