@@ -1,7 +1,7 @@
 ---
 repository:
   name: mywebsql
-  description: Docker images for mywebsql
+  description: Docker images for MyWebSQL
   topics: docker, image
 
   private: false
