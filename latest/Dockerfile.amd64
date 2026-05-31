@@ -7,7 +7,6 @@ WORKDIR /srv/www
 CMD ["/usr/bin/container"]
 
 RUN apk update && \
-  apk upgrade && \
   apk add php${PHP_PACKAGE_VERSION}-ldap sqlite git && \
   rm -rf /var/cache/apk/*
 
